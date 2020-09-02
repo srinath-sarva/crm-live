@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -28,7 +30,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['sri-crm1.herokuapp.com/','127.0.0.1']
 
 
-# Application definition
+# Application definitions 
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -122,3 +124,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static')
 ]
+django_heroku.settings(locals())
